@@ -1,0 +1,63 @@
+                  	Compile-or-Interpret
+		  	-------------------------
+
+This program  is implemented  by Uday Khedker  (uday@cse.iitb.ac.in) for
+course cs302-2020-21 at IIT Bombay and revised for the ACM Summer School
+for Compilers for AI/ML, 2024.
+
+It demonstrates the difference between a compiler and an interpreter for
+simple assignment statements as input. The source files are contained in 
+the src directory. To build the compiler-cum-interpreter, change the 
+directory to src and run the make command.
+
+A doxygen generated documentation of the classes is available in the html 
+directory. Use any html browser to view html/index.html file.
+
+The coi program compiles or interprets a sequence of semicolon-terminated 
+assignment statements in which the RHS can be arithmetic operators with 
+names and numbers. See the file input.txt for an example of the accepted
+input statements.
+
+The output of the coi program depends on the chosen mode:
+
+- If the mode chosen is interpretation, then the output is the result of 
+  the expressions (or values assigned to variables). The value of the LHS 
+  is preserved and is used in subsequent statements. 
+
+- If the mode chosen is compilation, then the output is a textual print of 
+  the abstract syntax trees, each representing an input statement. This
+  is the default mode.
+
+Command `./coi --help' produces the following output
+---------------------------------------------------------------------------
+Usage: coi [OPTION...]
+
+  -c                         Compile the input into abstract syntax trees and
+                             print them
+  -i                         Interpret the input and print result
+  -?, --help                 Give this help list
+      --usage                Give a short usage message
+---------------------------------------------------------------------------
+
+The input is read from stdin and thus file redirection using '<' also works.
+Thus, we can run this program for the input in input.txt file by giving the
+command
+	'./coi -i < input.txt' for interpretation,
+	'./coi -c < input.txt' for compilation,
+	'./coi < input.txt' also works for compilation.
+
+The source consists of the following files.
+
+ - Makefile  		The makefile used by the make command to build 
+                        the compiler
+ - coi.l      		The scanner script.
+ - coi.y      		The parser script.
+ - main.cc   		The main function that processes arguments.
+ - ast.hh    		Declarations of the classes defining the abstract 
+                        syntax trees.
+ - ast.cc    		Implementations of the classes defining the abstract 
+                        syntax trees.
+ - common-headers.hh  	Common headers.
+ - support.cc  		Support functions called from the parser script.
+ - input.txt  		A sample input file.
+

@@ -1,0 +1,9 @@
+The plan of introducing lex is as follows:
+
+- Begin with minimal.l. Show that it echos everything on the output.
+- Add the . rule to minimal. Show that it eats away everything other than newline.
+- Use encode-vovels.l. Take the input vowel-input.txt.
+- Use vovel-decode.l. Pine the out of encoding to decoding and have fun ;-)
+- Use num.l
+- Show kw.l, then kw-id-incorrect-*.l, and then kw-id-correct.l
+- Show discarding-input.l.
