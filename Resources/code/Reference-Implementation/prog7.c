@@ -1,21 +1,15 @@
 matrix1(2, int32)[2][2];
 
 int32 i;
-int32 j;
-
 i = 0;
-j = 0;
 
 int32 var;
-
-while(i<2){
-    while(j<2){
-        input(var);
-        matrix1[i][j]=var;
-        j= j+1;
-    }
-    i = i+1;
-    j=0;
+input(matrix1);
+while(i<10)
+{
+    input(var);
+    matrix1 = matrix1 * var;
+    i=i+1;
 }
 
 matrix2(2, int32)[2][2];

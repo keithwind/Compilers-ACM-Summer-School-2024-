@@ -202,6 +202,7 @@ template <typename T> void Tensor<T>::input()
     {
         for (int i = 0; i < row; i++)
         {
+	    cout <<"Give input element for index: "<<i<<"\n";
             cin >> ptr[i];
         }
     }
@@ -211,6 +212,7 @@ template <typename T> void Tensor<T>::input()
         {
             for(int j = 0; j < col; j++)
             {
+		cout <<"Give input element for index: "<<i<<", "<<j<<"\n";
                 cin >> ptr[i*col+j];
             }
         }
